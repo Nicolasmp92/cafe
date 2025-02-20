@@ -9,13 +9,17 @@ import { HomeComponent } from './components/home/home.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule } from '@angular/forms';
+import { MesasComponent } from './components/mesas/mesas.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    InicioComponent
+    InicioComponent,
+    MesasComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,
