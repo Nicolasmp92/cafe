@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Colores principales */
+  --color-primary: #4E342E; /* Café oscuro */
+  --color-secondary: #EAB07B; /* Beige claro */
+  --color-accent: #FF7F43; /* Naranja suave */
+  --color-accent-dark: #D76836; /* Naranja más oscuro */
+
+  /* Colores de texto */
+  --color-text-primary: #212121; /* Negro profundo */
+  --color-text-secondary: #D7CCC8; /* Tonos crema */
+
+  /* Fondos */
+  --color-background-light: #EAB07B; /* Fondo claro */
+  --color-background-dark: #212121; /* Fondo oscuro */
+
+  /* Fuentes */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+body {
+  background-color: var(--color-background-light);
+  color: var(--color-text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+}

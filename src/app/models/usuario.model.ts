@@ -1,9 +1,5 @@
-export  class UsuarioModel{
-
-
-  pass!: string;
-  nombre!: string;
-
+export class UsuarioModel {
+  nombre: string = '';
+  pass: string = '';
+  rol: string = '';
 }
-
-

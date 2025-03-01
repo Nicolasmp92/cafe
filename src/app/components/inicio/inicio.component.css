@@ -1,0 +1,100 @@
+/* Definición de la animación de entrada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para pantallas grandes */
+.card {
+  display: flex;
+  flex-direction: row; /* Imagen al lado del formulario */
+}
+
+.col-4 {
+  display: block; /* Muestra la columna de la imagen */
+}
+
+.card-body {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 2rem;
+  width: 100%;
+}
+
+
+.btn.btn-secondary:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border-color: #495057;
+}
+/* FIN PANTALLAS PEQUEÑAS  */
+
+
+
+
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Cambia a columna en dispositivos pequeños */
+    justify-content: center;
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 1rem;
+  }
+
+  .card-body {
+    background-image: url('../../../assets/img/Peka I1.png'); /* Imagen como fondo */
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    color: white; /* Texto blanco para contraste */
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .col-4 {
+    display: none; /* Oculta la columna de la imagen */
+  }
+
+  form {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo translúcido para el formulario */
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    max-width: 400px; /* Limita el ancho en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .text-center {
+    justify-content: center;
+    gap: 10px; /* Ajusta el espaciado entre opciones */
+  }
+
+  .form-label {
+    color: black; /* Texto negro dentro del formulario translúcido */
+  }
+
+
+  .btn {
+    background-color: var(--color-accent);
+    color: white;
+  }
+
+  .btn:hover {
+    background-color: var(--color-accent-dark);
+    color: var(--color-secondary);
+  }
+}
+
+/* Aplicación de la animación */
+.container {
+  animation: fadeInUp 0.8s ease-out;
+}

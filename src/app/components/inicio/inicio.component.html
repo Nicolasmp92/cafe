@@ -1,66 +1,94 @@
 <div class="container mt-5">
+  <h1 class="text-center text-muted fw-bold mt-3">Sistema para la gestion de tu cafeteria</h1>
 
   <div class="card">
     <div class="card-body bg-danger-emphasis">
       <div class="row">
-
         <div class="col-4">
           <img class="img-fluid" src="../../../assets/img/Peka I1.png" alt="PEKA">
         </div>
 
-        <div class="col-8 my-5">
-          <h3 class="card-title fw-bold text-center text-secondary">Iniciar Sesion</h3>
-
-          <form  (ngSubmit)="onSubmit( f )" #f="ngForm" class="mx-5">
-
-
-            <div class="col-lg-6">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Administrador
-                </label>
-              </div>
-
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Garzon
-                </label>
-              </div>
-
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Cocina
-                </label>
-              </div>
+        <div class="col-12 col-lg-8">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="mx-lg-5">
+            <h3 class="card-title fw-bold text-center text-secondary">Iniciar Sesión</h3>
+               <!-- Opciones de Rol -->
+          <div class="text-center mt-4">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="rol"
+                id="administrador"
+                value="Administrador"
+                [(ngModel)]="usuario.rol"
+                required
+              />
+              <label class="form-check-label" for="administrador">Administrador</label>
             </div>
-
-
-              <div class=" mt-5 mb-3">
-                  <label for="" class="form-label"> Usuario</label>
-                  <input type="text" class="form-control" required="campo obligatorio" name="usuario" [(ngModel)]="usuario.nombre" id="usuario" aria-describedby="helpId" placeholder="Ingrese su Rut">
-              </div>
-
-              <div class="mt-5 mb-3">
-                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger"> La contraseña es obligataria</span>
-                <label for="" class="form-label">Contraseña</label>
-                <input type="password" minlength="3" required="campo obligatorio" class="form-control" name="pass" [(ngModel)]="usuario.pass" id="pass" placeholder="Ingrese su contraseña">
-              </div>
-
-              <div class="form-check form-switch mb-5">
-                <input class="form-check-input " type="checkbox" id="flexSwitchCheckDefault">
-                <label class="form-check-label " for="flexSwitchCheckDefault">Recordar mi usuario</label>
-                </div>
-
-                <div class="d-grid gap-2">
-                  <button type="submit" name="" id="" class="btn btn-secondary">Acceder</button>
-                </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="rol"
+                id="garzon"
+                value="Garzón"
+                [(ngModel)]="usuario.rol"
+              />
+              <label class="form-check-label" for="garzon">Garzón</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="rol"
+                id="cocina"
+                value="Cocina"
+                [(ngModel)]="usuario.rol"
+              />
+              <label class="form-check-label" for="cocina">Cocina</label>
+            </div>
+          </div>
+            <!-- Campo Usuario -->
+            <div class="mt-5 mb-3">
+              <label for="usuario" class="form-label">Usuario</label>
+              <input
+                type="text"
+                class="form-control"
+                name="usuario"
+                [(ngModel)]="usuario.nombre"
+                id="usuario"
+                required
+                placeholder="Ingrese su usuario"
+              />
+              <span *ngIf="f.submitted && !usuario.nombre" class="text-danger">El usuario es obligatorio</span>
+            </div>
+            <!-- Campo Contraseña -->
+            <div class="mt-5 mb-3">
+              <label for="pass" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                minlength="3"
+                class="form-control"
+                name="pass"
+                [(ngModel)]="usuario.pass"
+                id="pass"
+                required
+                placeholder="Ingrese su contraseña"
+              />
+              <span *ngIf="f.submitted && !usuario.pass" class="text-danger">La contraseña es obligatoria</span>
+            </div>
+            <!-- Recordar Usuario -->
+            <div class="form-check form-switch mb-5">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+              <label class="form-check-label" for="flexSwitchCheckDefault">Recordar mi usuario</label>
+            </div>
+            <!-- Botón de Envío -->
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-secondary" [disabled]="f.invalid">Acceder</button>
+            </div>
           </form>
-
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
