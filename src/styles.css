@@ -1,17 +1,17 @@
-:root {
+:root { 
   /* Colores principales */
-  --color-primary: #4E342E; /* Café oscuro */
-  --color-secondary: #EAB07B; /* Beige claro */
-  --color-accent: #FF7F43; /* Naranja suave */
-  --color-accent-dark: #D76836; /* Naranja más oscuro */
+  --color-primary: #161616; /* Negro profundo */
+  --color-secondary: #8B5E3C; /* Marrón cálido */
+  --color-accent: #D9A25F; /* Dorado suave */
+  --color-accent-dark: #A87542; /* Marrón oscuro */
 
   /* Colores de texto */
-  --color-text-primary: #212121; /* Negro profundo */
-  --color-text-secondary: #D7CCC8; /* Tonos crema */
+  --color-text-primary: #F5F5F5; /* Blanco suave */
+  --color-text-secondary: #C2A88F; /* Beige tostado */
 
   /* Fondos */
-  --color-background-light: #EAB07B; /* Fondo claro */
-  --color-background-dark: #212121; /* Fondo oscuro */
+  --color-background-light: #242424; /* Gris oscuro */
+  --color-background-dark: #161616; /* Negro profundo */
 
   /* Fuentes */
   --font-primary: 'Poppins', sans-serif;
