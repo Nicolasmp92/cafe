@@ -1,100 +1,70 @@
-/* Definición de la animación de entrada */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Fondo de pantalla */
+.container {
+  background-color: var(--color-background-light);
 }
 
-/* Estilos para pantallas grandes */
-.card {
+/* Wrapper para centrar contenido */
+.login-wrapper {
   display: flex;
-  flex-direction: row; /* Imagen al lado del formulario */
-}
-
-.col-4 {
-  display: block; /* Muestra la columna de la imagen */
-}
-
-.card-body {
-  background-color: #ffffff; /* Fondo blanco */
-  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
   width: 100%;
+  max-width: 1000px;
 }
 
-
-.btn.btn-secondary:hover {
-  background-color: #f8f9fa;
-  color: #343a40;
-  border-color: #495057;
+/* Sección izquierda con logo */
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-/* FIN PANTALLAS PEQUEÑAS  */
 
+.logo {
+  max-width: 250px;
+}
 
+/* Sección derecha con el formulario */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
+.card {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.85); /* Blanco translúcido */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-lg);
+}
 
+/* Ajustes para inputs y botones */
+.form-control {
+  border-radius: var(--border-radius);
+}
 
+.btn-primary {
+  background-color: var(--color-accent);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: var(--transition);
+}
 
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+}
 
-/* Estilos para dispositivos móviles */
+/* Responsive */
 @media (max-width: 768px) {
-  .card {
-    flex-direction: column; /* Cambia a columna en dispositivos pequeños */
-    justify-content: center;
-    align-items: center; /* Centra los elementos horizontalmente */
-    padding: 1rem;
-  }
-
-  .card-body {
-    background-image: url('../../../assets/img/Peka I1.png'); /* Imagen como fondo */
-    background-size: cover; /* Cubre todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita la repetición */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    color: white; /* Texto blanco para contraste */
-    padding: 2rem;
-    width: 100%;
-  }
-
-  .col-4 {
-    display: none; /* Oculta la columna de la imagen */
-  }
-
-  form {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo translúcido para el formulario */
-    padding: 1.5rem;
-    border-radius: 10px;
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    max-width: 400px; /* Limita el ancho en pantallas pequeñas */
+  .login-wrapper {
+    flex-direction: column;
     text-align: center;
   }
 
-  .text-center {
-    justify-content: center;
-    gap: 10px; /* Ajusta el espaciado entre opciones */
+  .login-left {
+    display: none; /* Oculta el logo en móviles */
   }
-
-  .form-label {
-    color: black; /* Texto negro dentro del formulario translúcido */
-  }
-
-
-  .btn {
-    background-color: var(--color-accent);
-    color: white;
-  }
-
-  .btn:hover {
-    background-color: var(--color-accent-dark);
-    color: var(--color-secondary);
-  }
-}
-
-/* Aplicación de la animación */
-.container {
-  animation: fadeInUp 0.8s ease-out;
 }

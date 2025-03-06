@@ -1,91 +1,52 @@
-<div class="container mt-5">
-  <h1 class="text-center text-muted fw-bold mt-3">Sistema para la gestion de tu cafeteria</h1>
+<div class="container d-flex align-items-center justify-content-center vh-100">
+  <div class="login-wrapper">
+    <!-- Sección izquierda con logo -->
+    <div class="login-left">
+      <img class="logo" src="../../../assets/img/COFFE.png" alt="Coffee Logo">
+    </div>
 
-  <div class="card">
-    <div class="card-body bg-danger-emphasis">
-      <div class="row">
-        <div class="col-4">
-          <img class="img-fluid" src="../../../assets/img/COFFE.png" alt="PEKA">
-        </div>
+    <!-- Sección derecha con el formulario -->
+    <div class="login-right">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title fw-bold text-center text-secondary">Iniciar Sesión</h3>
 
-        <div class="col-12 col-lg-8">
-          <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="mx-lg-5">
-            <h3 class="card-title fw-bold text-center text-secondary">Iniciar Sesión</h3>
-               <!-- Opciones de Rol -->
+          <!-- Opciones de Rol -->
           <div class="text-center mt-4">
             <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="rol"
-                id="administrador"
-                value="Administrador"
-                [(ngModel)]="usuario.rol"
-                required
-              />
+              <input class="form-check-input" type="radio" name="rol" id="administrador" value="Administrador" [(ngModel)]="usuario.rol" required>
               <label class="form-check-label" for="administrador">Administrador</label>
             </div>
             <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="rol"
-                id="garzon"
-                value="Garzón"
-                [(ngModel)]="usuario.rol"
-              />
+              <input class="form-check-input" type="radio" name="rol" id="garzon" value="Garzón" [(ngModel)]="usuario.rol">
               <label class="form-check-label" for="garzon">Garzón</label>
             </div>
             <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="rol"
-                id="cocina"
-                value="Cocina"
-                [(ngModel)]="usuario.rol"
-              />
+              <input class="form-check-input" type="radio" name="rol" id="cocina" value="Cocina" [(ngModel)]="usuario.rol">
               <label class="form-check-label" for="cocina">Cocina</label>
             </div>
           </div>
-            <!-- Campo Usuario -->
-            <div class="mt-5 mb-3">
+
+          <!-- Formulario -->
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="mt-4">
+            <div class="mb-3">
               <label for="usuario" class="form-label">Usuario</label>
-              <input
-                type="text"
-                class="form-control"
-                name="usuario"
-                [(ngModel)]="usuario.nombre"
-                id="usuario"
-                required
-                placeholder="Ingrese su usuario"
-              />
+              <input type="text" class="form-control" name="usuario" [(ngModel)]="usuario.nombre" id="usuario" required placeholder="Ingrese su usuario">
               <span *ngIf="f.submitted && !usuario.nombre" class="text-danger">El usuario es obligatorio</span>
             </div>
-            <!-- Campo Contraseña -->
-            <div class="mt-5 mb-3">
+
+            <div class="mb-3">
               <label for="pass" class="form-label">Contraseña</label>
-              <input
-                type="password"
-                minlength="3"
-                class="form-control"
-                name="pass"
-                [(ngModel)]="usuario.pass"
-                id="pass"
-                required
-                placeholder="Ingrese su contraseña"
-              />
+              <input type="password" minlength="3" class="form-control" name="pass" [(ngModel)]="usuario.pass" id="pass" required placeholder="Ingrese su contraseña">
               <span *ngIf="f.submitted && !usuario.pass" class="text-danger">La contraseña es obligatoria</span>
             </div>
-            <!-- Recordar Usuario -->
-            <div class="form-check form-switch mb-5">
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+
+            <div class="form-check form-switch mb-4">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
               <label class="form-check-label" for="flexSwitchCheckDefault">Recordar mi usuario</label>
             </div>
-            <!-- Botón de Envío -->
-            <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-secondary" [disabled]="f.invalid">Acceder</button>
-            </div>
+
+            <button type="submit" class="btn btn-primary w-100" [disabled]="f.invalid">Acceder</button>
           </form>
         </div>
       </div>
