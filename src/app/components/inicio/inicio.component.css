@@ -1,7 +1,4 @@
-/* Fondo de pantalla */
-.container {
-  background-color: var(--color-background-light);
-}
+
 
 /* Wrapper para centrar contenido */
 .login-wrapper {

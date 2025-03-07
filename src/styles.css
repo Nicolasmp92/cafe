@@ -31,23 +31,40 @@
   --transition: all 0.3s ease-in-out;
 }
 
-/* 🌑 Modo Oscuro por defecto */
+/* 🌑 Modo Oscuro (Por defecto) */
 body {
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
+  --color-background: #161616; /* Fondo negro */
+  --color-text-primary: #F5F5F5; /* Blanco suave */
+  --color-text-secondary: #C2A88F; /* Beige tostado */
+  
+  background-color: var(--color-background) !important;
+  color: var(--color-text-primary) !important;
   font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.6;
-  transition: var(--transition);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* 🌞 Modo Claro */
-.light-mode {
-  --color-background: var(--light-background);
-  --color-text-primary: var(--light-text-primary);
-  --color-text-secondary: var(--light-text-secondary);
+body.light-mode {
+  --color-background: #F5F5F5;
+  --color-text-primary: #161616;
+  --color-text-secondary: #4D4D4D;
+
+  background-color: var(--color-background) !important;
+  color: var(--color-text-primary) !important;
 }
 
+/* TEMPORAL: Para depuración, muestra si la clase se está aplicando */
+body::before {
+  content: "Modo actual: " attr(class);
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+}
 
 /* 🎨 Botón flotante en la esquina superior derecha */
 .theme-toggle-btn {
@@ -61,8 +78,8 @@ body {
   transition: var(--transition);
 }
 
-/* 🌓 Cambiar color del botón en modo oscuro */
-.light-mode .theme-toggle-btn {
+/* 🌓 Cambiar color del botón en modo claro */
+body.light-mode .theme-toggle-btn {
   background-color: var(--color-background);
   color: var(--color-text-primary);
 }
