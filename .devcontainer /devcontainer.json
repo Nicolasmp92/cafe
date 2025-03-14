@@ -1,0 +1,27 @@
+{
+    "name": "Angular Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+    "features": {
+      "ghcr.io/devcontainers/features/node:latest": {
+        "version": "20"
+      }
+    },
+    "postCreateCommand": "npm install -g @angular/cli",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "bash",
+          "editor.formatOnSave": true,
+          "editor.tabSize": 2
+        },
+        "extensions": [
+          "angular.ng-template",
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode"
+        ]
+      }
+    },
+    "forwardPorts": [4200],
+    "remoteUser": "vscode"
+  }
+  
