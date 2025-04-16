@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.cafe.dto.CrearProductoDto;
 import com.cafe.entity.ProductoEntity;
 import com.cafe.repositoy.ProductoRepository;
 
@@ -50,8 +51,12 @@ public class ProductServiceImpl implements ProductService {
 	 * @return El producto guardado.
 	 */
 	@Override
-	public ProductoEntity crearProdcuto(ProductoEntity producto) {
-		return productRepository.save(producto);
+	public ProductoEntity crearProdcuto(CrearProductoDto producto) {
+
+		ProductoEntity produc = ProductoEntity.builder().name(producto.getName()).description(producto.getDescription())
+				.price(producto.getPrice()).stock(producto.getStock()).category(producto.getCategory()).build();
+
+		return productRepository.save(produc);
 	}
 
 	/**

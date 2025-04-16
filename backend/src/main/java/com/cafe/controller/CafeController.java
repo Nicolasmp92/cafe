@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cafe.dto.CrearProductoDto;
 import com.cafe.entity.ProductoEntity;
 import com.cafe.service.ProductService;
 
@@ -51,7 +52,7 @@ public class CafeController {
     @Operation(summary = "Crear un nuevo producto")
     @ApiResponse(responseCode = "201", description = "Producto creado correctamente")
     @PostMapping
-    public ResponseEntity<ProductoEntity> crearProducto(@RequestBody ProductoEntity producto) {
+    public ResponseEntity<ProductoEntity> crearProducto(@RequestBody CrearProductoDto producto) {
         return ResponseEntity.status(201).body(productoService.crearProdcuto(producto));
     }
 
