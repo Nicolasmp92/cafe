@@ -8,8 +8,8 @@ import com.cafe.entity.ProductoEntity;
 public interface ProductService {
 	
 	List<ProductoEntity> obtenerProductos();
-	ProductoEntity obtenerProducto(Integer id);
+	ProductoEntity obtenerProducto(Long id);
 	ProductoEntity crearProdcuto(ProductoEntity producto);
-	ProductoEntity actualizarProdcuto(ProductoEntity producto);
-	Void eliminarProductos(Integer id);
+	ProductoEntity actualizarProdcuto(Long id, ProductoEntity producto);
+	void eliminarProductos(Long id);
 }
