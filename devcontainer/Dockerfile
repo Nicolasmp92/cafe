@@ -1,18 +1,18 @@
-# Usa una imagen con Node.js y TypeScript preinstalado
+# Usa una imagen oficial de Node.js y TypeScript
 FROM mcr.microsoft.com/devcontainers/typescript-node:latest
 
-# Establecer directorio de trabajo
+# Establece el directorio de trabajo
 WORKDIR /workspace
 
-# Instalar Angular CLI globalmente
+# Instala Angular CLI globalmente
 RUN npm install -g @angular/cli
 
-# Instalar dependencias del proyecto si hay un package.json
+# Copia dependencias de Node si existen
 COPY package.json package-lock.json* ./
-RUN npm ci || true
+RUN if [ -f package.json ]; then npm ci; fi
 
-# Exponer puerto 4200 para Angular
-EXPOSE 4200
+# Exponer puertos de desarrollo Angular y Spring Boot
+EXPOSE 4200 8080
 
-# Comando por defecto al abrir el container
+# Mantiene el container vivo
 CMD [ "sleep", "infinity" ]

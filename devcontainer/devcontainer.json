@@ -1,27 +1,40 @@
 {
-    "name": "Angular Dev Container",
-    "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
-    "features": {
-      "ghcr.io/devcontainers/features/node:latest": {
-        "version": "20"
-      }
+  "name": "Angular + Spring Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/node:latest": {
+      "version": "20"
     },
-    "postCreateCommand": "npm install -g @angular/cli",
-    "customizations": {
-      "vscode": {
-        "settings": {
-          "terminal.integrated.defaultProfile.linux": "bash",
-          "editor.formatOnSave": true,
-          "editor.tabSize": 2
-        },
-        "extensions": [
-          "angular.ng-template",
-          "dbaeumer.vscode-eslint",
-          "esbenp.prettier-vscode"
-        ]
-      }
-    },
-    "forwardPorts": [4200],
-    "remoteUser": "vscode"
-  }
-  
+    "ghcr.io/devcontainers/features/java:latest": {
+      "version": "11"
+    }
+  },
+  "postCreateCommand": "npm install -g @angular/cli",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.bracketPairColorization.enabled": true
+      },
+      "extensions": [
+        "angular.ng-template",              // Angular Language Service
+        "dbaeumer.vscode-eslint",            // Linter
+        "esbenp.prettier-vscode",            // Formateador
+        "christian-kohler.npm-intellisense", // NPM Intellisense
+        "eamodio.gitlens",                   // GitLens
+        "coenraads.bracket-pair-colorizer-2",// Bracket Pair Colorizer 2
+        "bierner.color-info",                // Color Info
+        "mariusschulz.yarn-lock-vscode",      // Yarn (opcional si usas Yarn también)
+        "jdinhlife.gruvbox",                  // Tema Gruvbox (bonito para Angular)
+        "syler.sass-indented",                // Soporte para SASS/SCSS si lo usas
+        "wholroyd.jinja",                     // Jinja (útil para plantillas backend si alguna vez usas)
+        "mauve.terraform",                    // Terraform (por si trabajas con infraestructura)
+        "matthewpi.codelens"                  // Código Lens mejoras en JavaScript y TypeScript
+      ]
+    }
+  },
+  "forwardPorts": [4200, 8080],
+  "remoteUser": "vscode"
+}
