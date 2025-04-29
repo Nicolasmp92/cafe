@@ -6,7 +6,7 @@
       "version": "20"
     },
     "ghcr.io/devcontainers/features/java:latest": {
-      "version": "11"
+      "version": "17"
     }
   },
   "postCreateCommand": "npm install -g @angular/cli",
@@ -19,19 +19,19 @@
         "editor.bracketPairColorization.enabled": true
       },
       "extensions": [
-        "angular.ng-template",              // Angular Language Service
-        "dbaeumer.vscode-eslint",            // Linter
-        "esbenp.prettier-vscode",            // Formateador
-        "christian-kohler.npm-intellisense", // NPM Intellisense
-        "eamodio.gitlens",                   // GitLens
-        "coenraads.bracket-pair-colorizer-2",// Bracket Pair Colorizer 2
-        "bierner.color-info",                // Color Info
-        "mariusschulz.yarn-lock-vscode",      // Yarn (opcional si usas Yarn también)
-        "jdinhlife.gruvbox",                  // Tema Gruvbox (bonito para Angular)
-        "syler.sass-indented",                // Soporte para SASS/SCSS si lo usas
-        "wholroyd.jinja",                     // Jinja (útil para plantillas backend si alguna vez usas)
-        "mauve.terraform",                    // Terraform (por si trabajas con infraestructura)
-        "matthewpi.codelens"                  // Código Lens mejoras en JavaScript y TypeScript
+        "angular.ng-template",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "christian-kohler.npm-intellisense",
+        "eamodio.gitlens",
+        "coenraads.bracket-pair-colorizer-2",
+        "bierner.color-info",
+        "mariusschulz.yarn-lock-vscode",
+        "jdinhlife.gruvbox",
+        "syler.sass-indented",
+        "wholroyd.jinja",
+        "mauve.terraform",
+        "matthewpi.codelens"
       ]
     }
   },
